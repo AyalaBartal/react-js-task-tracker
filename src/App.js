@@ -37,6 +37,8 @@ const App = () => {
 
   // Add Task
   const addTask = async (task) => {
+    console.log('task is ',task)
+    console.log(task)
     const res = await fetch('http://localhost:5000/tasks', {
       method: 'POST',
       headers: {
@@ -46,6 +48,8 @@ const App = () => {
     })
 
     const data = await res.json()
+
+    console.log('data is ', data)
 
     setTasks([...tasks, data])
 
